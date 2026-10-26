@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Full-stack Developer</title>
+    
+    <!-- Google Fonts: Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        neoYellow: '#FFE600',
+                        neoBlue: '#0066FF',
+                        neoWhite: '#F4F4F0',
+                    },
+                    boxShadow: {
+                        neo: '8px 8px 0 0 #000',
+                        neoHover: '4px 4px 0 0 #000',
+                        neoNone: '0 0 0 0 #000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations -->
+    <style>
+        body {
+            background-color: #F4F4F0;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Neo-Brutalist Button Press Effect */
+        .btn-neo {
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-neo:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0 0 #000;
+        }
+        .btn-neo:active {
+            transform: translate(8px, 8px);
+            box-shadow: 0 0 0 0 #000;
+        }
+
+        /* Custom Scrollbar for Neo-Brutalism feel */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff;
+            border-left: 3px solid #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFE600;
+            border-left: 3px solid #000;
+            border-bottom: 3px solid #000;
+        }
+    </style>
+</head>
+<body class="font-sans text-black selection:bg-neoBlue selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white border-b-4 border-black z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter">PORTFOLIO.</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-6 font-bold">
+                <a href="#about" class="hover:text-neoBlue transition-colors">About</a>
+                <a href="#experience" class="hover:text-neoBlue transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-neoBlue transition-colors">Skills</a>
+                <a href="#certifications" class="hover:text-neoBlue transition-colors">Certifications</a>
+                <a href="#contact" class="hover:text-neoBlue transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden block border-2 border-black bg-neoYellow px-3 py-1 font-bold shadow-[4px_4px_0_0_#000] active:translate-y-[4px] active:translate-x-[4px] active:shadow-none transition-all">
+                MENU
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden border-t-4 border-black bg-white flex-col font-bold text-center">
+            <a href="#about" class="block py-4 border-b-2 border-black hover:bg-neoYellow">About</a>
+            <a href="#experience" class="block py-4 border-b-2 border-black hover:bg-neoYellow">Experience</a>
+            <a href="#skills" class="block py-4 border-b-2 border-black hover:bg-neoYellow">Skills</a>
+            <a href="#certifications" class="block py-4 border-b-2 border-black hover:bg-neoYellow">Certifications</a>
+            <a href="#contact" class="block py-4 hover:bg-neoYellow">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="pt-32 pb-20 px-6 min-h-[90vh] flex items-center border-b-4 border-black bg-neoBlue relative overflow-hidden">
+        <!-- Decorative Shapes -->
+        <div class="absolute top-20 left-10 w-24 h-24 bg-neoYellow border-4 border-black rounded-full shadow-neo animate-bounce" style="animation-duration: 3s;"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-white border-4 border-black shadow-neo transform rotate-12"></div>
+        
+        <div class="max-w-6xl mx-auto w-full relative z-10">
+            <div class="bg-white border-4 border-black p-8 md:p-12 shadow-neo max-w-4xl mx-auto text-center transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <span class="inline-block bg-neoYellow px-4 py-1 border-2 border-black font-bold mb-6 text-sm md:text-base shadow-[4px_4px_0_0_#000]">
+                    👋 WELCOME TO MY WORLD
+                </span>
+                <h1 class="text-4xl md:text-7xl font-extrabold uppercase leading-tight mb-6 text-black">
+                    Hello, I'm a <br>
+                    <span class="text-neoBlue bg-neoYellow px-2">Full-stack Developer</span> <br>
+                    & IS Student
+                </h1>
+                <p class="text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto">
+                    Building robust systems and turning complex problems into beautiful, functional, and user-friendly digital experiences.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#experience" class="btn-neo inline-block bg-neoYellow text-black font-bold text-lg px-8 py-3 border-4 border-black shadow-neo">
+                        My Experience
+                    </a>
+                    <a href="#contact" class="btn-neo inline-block bg-white text-black font-bold text-lg px-8 py-3 border-4 border-black shadow-neo">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 border-b-4 border-black bg-neoYellow">
+        <div class="max-w-6xl mx-auto reveal">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/3">
+                    <div class="aspect-square bg-neoBlue border-4 border-black shadow-neo flex items-center justify-center p-8 relative">
+                        <img src="profile-img.jpg">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 bg-white border-4 border-black p-8 shadow-neo text-lg font-medium leading-relaxed">
+                    <p class="mb-4">
+                        I am currently studying <strong>Information Systems</strong> at <strong>Universitas BSI, Cibitung campus</strong>. My academic and practical focus revolves around System Analysis, Software Development, and Database Administration.
+                    </p>
+                    <p class="mb-4">
+                        Based in <strong>Bekasi</strong>, I am passionate about bridging the gap between hardware limitations and software capabilities, always eager to learn modern frameworks and implement best practices in coding.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="border-2 border-black bg-neoYellow px-3 py-1 font-bold">🎓 System Analysis</span>
+                        <span class="border-2 border-black bg-neoBlue text-white px-3 py-1 font-bold">💻 Software Dev</span>
+                        <span class="border-2 border-black bg-white px-3 py-1 font-bold">🗄️ Database Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 px-6 border-b-4 border-black bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-5xl font-black uppercase mb-16 text-center border-4 border-black inline-block px-8 py-3 bg-neoYellow shadow-neo reveal">Experience</h2>
+            
+            <div class="space-y-8">
+                <!-- Job 1 -->
+                <!-- <div class="bg-neoBlue text-white border-4 border-black p-6 md:p-8 shadow-neo reveal btn-neo block cursor-default">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-4">
+                        <h3 class="text-2xl md:text-3xl font-bold bg-white text-black inline-block px-3 py-1 border-2 border-black">PKL (Intern)</h3>
+                        <span class="font-bold text-neoYellow border-2 border-neoYellow px-3 py-1">Dukcapil</span>
+                    </div>
+                    <p class="text-lg font-medium mt-2">
+                        Designed and developed an Excel-based population data analytics and visualization dashboard to streamline reporting and demographic insights.
+                    </p>
+                </div> -->
+
+                <!-- Job 2 -->
+                <!-- <div class="bg-neoYellow text-black border-4 border-black p-6 md:p-8 shadow-neo reveal btn-neo block cursor-default">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-4">
+                        <h3 class="text-2xl md:text-3xl font-bold bg-white text-black inline-block px-3 py-1 border-2 border-black">Cost Estimator</h3>
+                        <span class="font-bold bg-black text-white px-3 py-1">PT. Perusahaan Kontraktor Besar</span>
+                    </div>
+                    <p class="text-lg font-medium mt-2">
+                        Handled material quantity takeoff, conducted market price research, and prepared comprehensive RAB (Rencana Anggaran Biaya) for major construction projects.
+                    </p>
+                </div> -->
+
+                <!-- Job 3 -->
+                <div class="bg-white text-black border-4 border-black p-6 md:p-8 shadow-neo reveal btn-neo block cursor-default">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                        <h3 class="text-2xl md:text-3xl font-bold bg-neoBlue text-white inline-block px-3 py-1 border-2 border-black">Warehouse Operator</h3>
+                        <span class="font-bold bg-black text-white px-3 py-1">PT. YAMAHA MUSICAL PRODUCTS ASIA</span>
+                    </div>
+                    <p class="text-lg font-medium mt-4">
+                        Managed inventory tracking, optimized storage layouts, and ensured efficient inbound and outbound logistics operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6 border-b-4 border-black bg-neoBlue relative overflow-hidden">
+        <!-- Marquee Background effect -->
+        <div class="absolute top-10 whitespace-nowrap opacity-10 flex text-white font-black text-9xl tracking-tighter pointer-events-none select-none">
+            SKILLS SKILLS SKILLS SKILLS SKILLS
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-5xl font-black uppercase mb-16 text-center text-white border-4 border-white inline-block px-8 py-3 bg-black shadow-[8px_8px_0_0_#fff] reveal">Tech Stack</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+                <!-- Skill Cards -->
+                <div class="bg-white border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🔴</span> Laravel
+                </div>
+                <div class="bg-neoYellow border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🔥</span> Filament v5
+                </div>
+                <div class="bg-white border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🐘</span> PHP
+                </div>
+                <div class="bg-neoYellow border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🐬</span> MySQL
+                </div>
+                <div class="bg-neoYellow border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">💚</span> Vue.js
+                </div>
+                <div class="bg-white border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">⚛️</span> React Native
+                </div>
+                <div class="bg-neoYellow border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🦅</span> Flutter
+                </div>
+                <div class="bg-white border-4 border-black p-6 text-center shadow-neo btn-neo font-bold text-xl flex flex-col items-center gap-2">
+                    <span class="text-4xl">🌊</span> Tailwind CSS
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 px-6 border-b-4 border-black bg-white">
+        <div class="max-w-4xl mx-auto reveal text-center">
+            <h2 class="text-5xl font-black uppercase mb-12 border-4 border-black inline-block px-8 py-3 bg-neoYellow shadow-neo">Certifications</h2>
+            
+            <div class="bg-white border-4 border-black p-8 shadow-neo flex flex-col md:flex-row items-center justify-between gap-6 transform rotate-1 hover:rotate-0 transition-transform btn-neo">
+                <div class="text-left">
+                    <h3 class="text-3xl font-black text-neoBlue mb-2">Junior Web Developer</h3>
+                    <p class="text-xl font-bold border-2 border-black inline-block px-2 bg-neoYellow">BPPTIK</p>
+                </div>
+                <div class="bg-black text-white px-6 py-4 border-4 border-black font-bold text-xl">
+                    🗓️ Nov 2025
+                </div>
+            </div>
+
+            <div class="bg-white border-4 border-black p-8 mt-4 shadow-neo flex flex-col md:flex-row items-center justify-between gap-6 transform rotate-1 hover:rotate-0 transition-transform btn-neo">
+                <div class="text-left">
+                    <h3 class="text-3xl font-black text-neoBlue mb-2">Database Administrator</h3>
+                    <p class="text-xl font-bold border-2 border-black inline-block px-2 bg-neoYellow">LSP BSI</p>
+                </div>
+                <div class="bg-black text-white px-6 py-4 border-4 border-black font-bold text-xl">
+                    🗓️ Jan 2026
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 bg-neoYellow border-b-4 border-black">
+        <div class="max-w-5xl mx-auto reveal text-center">
+            <h2 class="text-6xl md:text-8xl font-black uppercase mb-8 leading-none">
+                Let's<br>
+                <span class="bg-white px-6 py-2 border-4 border-black inline-block mt-4 shadow-neo transform -rotate-2">Connect.</span>
+            </h2>
+            <p class="text-xl font-bold mb-16 max-w-2xl mx-auto bg-white border-4 border-black inline-block px-6 py-3 shadow-[4px_4px_0_0_#000]">
+                Got a project in mind, or just want to say hi? Reach out directly!
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+                <!-- Email Button -->
+                <a href="mailto:harryaddrian09@gmail.com" class="w-full md:w-auto bg-neoBlue text-white border-4 border-black py-6 px-10 shadow-neo btn-neo flex items-center justify-center gap-4 group">
+                    <span class="text-4xl">📧</span>
+                    <span class="font-black text-2xl md:text-3xl tracking-wide uppercase group-hover:underline">Email Me</span>
+                </a>
+
+                <!-- LinkedIn Button -->
+                <a href="https://linkedin.com/in/usernameanda" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto bg-white text-neoBlue border-4 border-black py-6 px-10 shadow-neo btn-neo flex items-center justify-center gap-4 group">
+                    <span class="text-4xl">💼</span>
+                    <span class="font-black text-2xl md:text-3xl tracking-wide uppercase group-hover:underline">LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 text-center">
+        <p class="font-bold font-sans">
+            © 2026 Crafted with Neo-Brutalism UI
+        </p>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Unobserve after revealing to prevent repeating animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
